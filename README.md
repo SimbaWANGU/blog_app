@@ -1,22 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Recipe app
+# Blog app
 
 ![](./app//assets/images/screenshot.png)
 
-The Recipe app keeps track of all the recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow to make them public so anyone can access them.
+The Blog app is a classic example of a blog website. A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Getting Started
 
 - Clone the repository
-  `git clone https://github.com/SimbaWANGU/blog-app.git`
+  `git clone https://github.com/SimbaWANGU/blog_app.git`
 - Navigate to the folder
   `cd blog_app`
 - Install packages
   `bundle install`
   `npm install`
-- Configure environment variables for db setup
-  `EDITOR="code --wait" bin/rails credentials:edit`
 - Setup database
   `rails db:setup`
 - Run migration
