@@ -1,5 +1,17 @@
-<h1>Posts#show</h1>
-<p>Here is a post for a given user based on post_id</p>
-<%= @post.author.name %>
-<%= @post.text %>
-<%= @post.comments.count %>
+<div class="page_container">
+  <div class="full_post">
+    <div class="header">
+      <p class="header_info">Post #<%= @author.posts.find_index(@post) + 1%> by <%= @post.author.name %></p>
+      <p class="header_comments">Comments: <%= @post.comments_counter %>,</p>
+      <p class="header_likes">Likes: <%= @post.likes_counter %></p>
+    </div>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="all_comments">
+    <% @post.comments.each do |c| %>
+      <td><%= c.author.name %>:</td>
+      <td><%= c.text %></td>
+      <br />
+    <% end %>
+  </div>
+</div>
