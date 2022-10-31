@@ -1,0 +1,9 @@
+<h1>Authors#index</h1>
+<p>Here is a list of all authors</p>
+<tr>
+  <% @authors.each do |a| %>
+    <td><%= a.name %></td>
+    <td><%= a.bio %></td>
+    <br />
+  <% end %>
+</tr>
