@@ -8,6 +8,9 @@
     <p><%= @post.text %></p>
   </div>
   <div class="all_comments">
+    <button>
+      <a href="/posts/<%= @post.id%>/newcomment">Add Comment</a>
+    </button>
     <% @post.comments.each do |c| %>
       <td><%= c.author.name %>:</td>
       <td><%= c.text %></td>
