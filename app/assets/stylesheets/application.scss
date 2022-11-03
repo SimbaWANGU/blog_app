@@ -64,10 +64,10 @@
 .stats {
   display: flex;
   flex-direction: row;
-  margin-left: 80%;
+  margin-left: 70%;
 
   p {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 }
 
@@ -87,7 +87,7 @@
 
 .comments {
   border: 1px solid black;
-  width: 85vw;
+  width: 65vw;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -127,4 +127,10 @@
 .all_comments {
   margin-top: 10px;
   border: 1px solid black;
+}
+
+.add_post_form {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto 20px;
 }
