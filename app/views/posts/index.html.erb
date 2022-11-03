@@ -8,6 +8,15 @@
       <p>Number of posts: <%= @author.posts_counter %></p>
     </div>
   </div>
+
+  <%= form_with model: @new_post, url: author_posts_url, html: {class: "add_post_form"} do |form| %>
+    <%= form.label(:title, "Title:") %>
+    <%= form.text_field(:title) %>
+    <%= form.label(:text, "Text:") %>
+    <%= form.text_field(:text) %>
+    <%= form.submit("Create Post") %>
+  <% end %>
+
   <% @posts.each do |a| %>
   <div class="posts">
     <h4>
@@ -17,6 +26,9 @@
     </h4>
     <p><%= a.text %></p>
     <div class="stats">
+      <%= form_with url: "/addlike/#{a.id}" do |form| %>
+        <%= form.submit("Add Like") %>
+      <% end %>
       <p>Comments: <%= a.comments_counter %>,</p>
       <p>Likes: <%= a.likes_counter %></p>
     </div>
