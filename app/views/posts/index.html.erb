@@ -20,10 +20,11 @@
   <% @posts.each do |a| %>
   <div class="posts">
     <h4>
-      <a href='/authors/<%=@author.id %>/posts/<%=a.id%>'>
+      <a href='/authors/<%=@author.id %>/posts/<%=a.id%>' class='link'>
         Post #<%= (@author.posts.find_index(a) + 1)  %>
       </a>
     </h4>
+    <h3><%= a.title %></h3>
     <p><%= a.text %></p>
     <div class="stats">
       <%= form_with url: "/addlike/#{a.id}" do |form| %>

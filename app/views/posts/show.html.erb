@@ -2,6 +2,7 @@
   <div class="full_post">
     <div class="header">
       <p class="header_info">Post #<%= @author.posts.find_index(@post) + 1%> by <%= @post.author.name %></p>
+      <h3><%= @post.title %></h3>
       <p class="header_comments">Comments: <%= @post.comments_counter %>,</p>
       <p class="header_likes">Likes: <%= @post.likes_counter %></p>
     </div>
