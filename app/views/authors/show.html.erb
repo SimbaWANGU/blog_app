@@ -14,7 +14,7 @@
   <% @author.most_recent_posts.each do |a| %>
   <div class="posts">
     <h4>
-      <a href='/authors/<%=@author.id %>/posts/<%=a.id%>'>
+      <a class="single_post" href='/authors/<%=@author.id %>/posts/<%=a.id%>'>
         Post #<%= (@author.posts.find_index(a) + 1)  %>
       </a>
     </h4>
