@@ -6,8 +6,12 @@ RSpec.describe 'Author index page', type: :feature do
                          posts_counter: 0)
     @post = Post.create(author: @author, title: 'Hello', text: 'This is my first post', likes_counter: 0,
                         comments_counter: 0)
+    @comment = Comment.create(author: @author, post: @post, text: 'My comment')
+    @like = Like.create(author: @author, post: @post)
     @author.save
     @post.save
+    @comment.save
+    @like.save
 
     scenario ' I can see the username of all authors.' do
       visit '/'
