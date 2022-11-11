@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @id = current_author.id
     @post = Post.find(params[:id])
   end
-
   def add_comment
     @commented_post = Post.find(params[:id])
     comment = Comment.new(text: params[:text], author: current_author, post: @commented_post)
