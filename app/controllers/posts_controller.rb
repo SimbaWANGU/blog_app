@@ -24,4 +24,14 @@ class PostsController < ApplicationController
     end
     redirect_to "/authors/#{post.author_id}/posts/}", allow_other_host: true
   end
+
+  def delete_post
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = 'Post deleted!'
+    else
+      flash[:alert] = 'Error! Please try again later.'
+    end
+    redirect_to author_posts_path(current_author)
+  end
 end

@@ -14,4 +14,18 @@ class CommentsController < ApplicationController
     end
     redirect_to "/authors/#{@commented_post.author_id}/posts/#{params[:id]}"
   end
+
+  def delete_comment
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @author = @post.author
+    if @comment.destroy
+      flash[:notice] = 'Post deleted!'
+      @post.comments_counter = @post.comments.count
+      @post.save
+    else
+      flash[:alert] = 'Error! Please try again later.'
+    end
+    redirect_to "/authors/#{@author.id}/posts/#{@post.id}"
+  end
 end
