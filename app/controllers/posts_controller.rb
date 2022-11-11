@@ -10,12 +10,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @id = current_user.id
+    @id = current_author.id
     @new_post = Post.new
   end
 
   def create
-    post = Post.new(title: params[:title], text: params[:text], author: current_user, comments_counter: 0,
+    post = Post.new(title: params[:title], text: params[:text], author: current_author, comments_counter: 0,
                     likes_counter: 0)
     if post.save
       flash[:notice] = 'success'
