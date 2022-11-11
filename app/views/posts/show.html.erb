@@ -15,6 +15,13 @@
     <% @post.comments.each do |c| %>
       <td><%= c.author.name %>:</td>
       <td><%= c.text %></td>
+      <td>
+      <% if c.author == current_author || current_author.role == "admin" %>
+        <%= form_with url: "/deletecomment/#{c.id}", method: :delete do |form| %>
+        <%= form.submit("Delete") %>
+        <% end %>
+      <% end %>
+      </td>
       <br />
     <% end %>
   </div>
