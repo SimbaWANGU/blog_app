@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     end
     redirect_to "/authors/#{@commented_post.author_id}/posts/#{params[:id]}"
   end
-  
+
   def delete_comment
     @comment = Comment.find(params[:id])
     @post = @comment.post

@@ -16,7 +16,7 @@ class Author < ApplicationRecord
   def admin?
     is? :admin
   end
-  
+
   def most_recent_posts
     Post.limit(3).order(created_at: :desc).where(author: self)
   end
