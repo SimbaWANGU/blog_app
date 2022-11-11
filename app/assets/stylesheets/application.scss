@@ -134,3 +134,39 @@
   flex-direction: row;
   margin: 10px auto 20px;
 }
+
+.new_author {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  margin: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+  margin: 2% 0;
+
+  input {
+    margin: auto;
+    width: 80%;
+    padding: 5px;
+    background: none;
+  }
+}
+
+.actions {
+  display: flex;
+  margin: 2% 0;
+
+  input {
+    border: 1px solid black;
+    padding: 5px;
+    box-shadow: 3px 5px black;
+    background: none;
+    width: 80%;
+    margin: auto;
+  }
+}
